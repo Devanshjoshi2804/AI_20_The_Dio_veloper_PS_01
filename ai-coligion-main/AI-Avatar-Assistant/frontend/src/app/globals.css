@@ -60,6 +60,211 @@
     0%, 60%, 100% { transform: translateY(0); }
     30% { transform: translateY(-6px); }
   }
+  
+  /* Modern interactive controls */
+  .modern-control-panel {
+    background: linear-gradient(135deg, rgba(79, 70, 229, 0.8) 0%, rgba(124, 58, 237, 0.8) 100%);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 4px;
+    transition: all 0.3s ease;
+  }
+  
+  .modern-control-panel:hover {
+    box-shadow: 0 12px 40px rgba(79, 70, 229, 0.3);
+  }
+  
+  .control-button {
+    padding: 12px;
+    border-radius: 10px;
+    color: white;
+    transition: all 0.2s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .control-button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-2px);
+  }
+  
+  .control-button:active {
+    transform: translateY(1px);
+  }
+  
+  /* Interactive 3D Visualization Styles */
+  .particle {
+    transform-origin: center;
+    will-change: transform, opacity;
+    z-index: 1;
+  }
+  
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    25% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    50% {
+      transform: translateY(0) translateX(20px);
+    }
+    75% {
+      transform: translateY(20px) translateX(10px);
+    }
+  }
+  
+  .pulse-animation {
+    animation: pulse 3s infinite ease-in-out;
+    box-shadow: 0 0 30px rgba(79, 70, 229, 0.6);
+  }
+  
+  .glow-animation {
+    animation: glow 2s infinite alternate;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+  }
+  
+  @keyframes glow {
+    from {
+      opacity: 0.7;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    to {
+      opacity: 1;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.9), 0 0 30px rgba(139, 92, 246, 0.4);
+    }
+  }
+  
+  .audio-bar {
+    will-change: height;
+    box-shadow: 0 0 8px rgba(139, 92, 246, 0.3);
+    animation: audio-bar-pulse 2s infinite alternate;
+    animation-delay: calc(var(--index) * 100ms);
+  }
+  
+  @keyframes audio-bar-pulse {
+    from {
+      opacity: 0.7;
+    }
+    to {
+      opacity: 1;
+      box-shadow: 0 0 12px rgba(139, 92, 246, 0.6);
+    }
+  }
+  
+  .neural-line {
+    height: 1px;
+    will-change: opacity;
+    filter: blur(1px);
+  }
+  
+  @keyframes pulse-line {
+    from {
+      opacity: 0.1;
+      filter: blur(1px);
+    }
+    to {
+      opacity: 0.5;
+      filter: blur(0);
+    }
+  }
+  
+  .ring-1 {
+    border: 1px solid rgba(139, 92, 246, 0.3);
+    border-radius: 50%;
+    animation: ring-pulse 3s infinite alternate;
+  }
+  
+  @keyframes ring-pulse {
+    from {
+      transform: scale(1);
+      opacity: 0.3;
+    }
+    to {
+      transform: scale(1.2);
+      opacity: 0.6;
+    }
+  }
+  
+  .personality-dropdown {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+  }
+  
+  .personality-trigger:hover .personality-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  .personality-option {
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+    color: white;
+    text-align: left;
+    width: 100%;
+  }
+  
+  .personality-option:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+  }
+  
+  /* Improved AI status indicators */
+  .ai-status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+  }
+  
+  .ai-status-indicator .status-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+  }
+  
+  .ai-status-connected {
+    background-color: rgba(16, 185, 129, 0.2);
+    color: rgb(16, 185, 129);
+  }
+  
+  .ai-status-connected .status-dot {
+    background-color: rgb(16, 185, 129);
+    animation: pulse 2s infinite;
+  }
+  
+  .ai-status-processing {
+    background-color: rgba(245, 158, 11, 0.2);
+    color: rgb(245, 158, 11);
+  }
+  
+  .ai-status-processing .status-dot {
+    background-color: rgb(245, 158, 11);
+    animation: pulse 1s infinite;
+  }
+  
+  .ai-status-listening {
+    background-color: rgba(59, 130, 246, 0.2);
+    color: rgb(59, 130, 246);
+  }
+  
+  .ai-status-listening .status-dot {
+    background-color: rgb(59, 130, 246);
+    animation: pulse 0.8s infinite;
+  }
 }
 
 /* D-ID Agent styling for better Vercel compatibility */
