@@ -563,9 +563,9 @@ export default function Home() {
                         </span>
                       </React.Fragment>
                     ))}
-                  </div>
-                </div>
-
+              </div>
+            </div>
+            
                 {/* Processing indicator above avatar - Positioned better */}
                 <div className="absolute top-24 left-1/2 transform -translate-x-1/2 bg-indigo-500/40 backdrop-blur-md px-4 py-2 rounded-full shadow-lg z-30">
                   <div className="flex items-center gap-3">
@@ -646,25 +646,25 @@ export default function Home() {
                 {/* Better particle system */}
                 <div className="particles-container absolute inset-0">
                   {Array.from({ length: 25 }).map((_, i) => (
-                    <div 
-                      key={i}
+                  <div 
+                    key={i}
                       className="particle absolute"
-                      style={{
+                    style={{ 
                         width: `${Math.random() * 5 + 1}px`,
                         height: `${Math.random() * 5 + 1}px`,
                         backgroundColor: `hsl(${250 + Math.random() * 40}, 80%, ${75 + Math.random() * 15}%)`,
                         borderRadius: '50%',
-                        top: `${Math.random() * 100}%`,
-                        left: `${Math.random() * 100}%`,
+                      top: `${Math.random() * 100}%`, 
+                      left: `${Math.random() * 100}%`,
                         opacity: Math.random() * 0.6 + 0.2,
                         animation: `float ${Math.random() * 10 + 8}s linear infinite`,
                         animationDelay: `${Math.random() * 5}s`,
                         boxShadow: `0 0 ${Math.random() * 6 + 3}px rgba(124, 58, 237, 0.6)`,
                       }}
                     />
-                  ))}
-                </div>
-                
+                ))}
+              </div>
+              
                 {/* Better metrics display - Improved positioning */}
                 <div className="absolute top-[65%] left-1/2 transform -translate-x-1/2 w-full max-w-md grid grid-cols-2 gap-3 z-20 px-4">
                   <div className="bg-indigo-500/30 backdrop-blur-md rounded-lg p-3 border border-indigo-500/20 shadow-lg">
@@ -672,8 +672,8 @@ export default function Home() {
                     <div className="text-white text-lg font-semibold flex items-center">
                       <span>81</span>
                       <span className="text-xs ml-1 opacity-70">ms</span>
-                    </div>
                   </div>
+                </div>
                   <div className="bg-indigo-500/30 backdrop-blur-md rounded-lg p-3 border border-indigo-500/20 shadow-lg">
                     <div className="text-indigo-200 text-xs font-medium mb-1 opacity-80">Accuracy</div>
                     <div className="text-white text-lg font-semibold flex items-center">
@@ -695,7 +695,7 @@ export default function Home() {
                     </div>
                   </div>
                 </div>
-
+                
                 {/* Improved audio visualizer - Better positioning */}
                 <div className="absolute bottom-0 left-0 right-0 h-36 z-10 opacity-80">
                   <div className="w-full h-full flex items-end justify-center">
@@ -715,10 +715,10 @@ export default function Home() {
                         />
                       );
                     })}
-                  </div>
                 </div>
-              </div>
-
+                </div>
+                </div>
+                
               {/* Improved Assistant Controls */}
               <div className="mt-6 grid grid-cols-2 gap-4">
                 <div className="bg-indigo-900/50 backdrop-blur-md rounded-xl p-4 border border-indigo-500/20 shadow-lg">
@@ -729,21 +729,21 @@ export default function Home() {
                     Assistant Mode
                   </div>
                   <div className="flex space-x-2">
-                    <button 
+                  <button 
                       className="flex-1 px-3 py-2 text-xs font-medium rounded-lg transition-all duration-300 bg-indigo-600/80 hover:bg-indigo-500/80 text-white shadow-md"
                       onClick={() => changeAvatarMood('neutral')}
                     >
                       Professional
-                    </button>
+                  </button>
                     <button 
                       className="flex-1 px-3 py-2 text-xs font-medium rounded-lg transition-all duration-300 bg-indigo-800/50 hover:bg-indigo-700/50 text-white/80 hover:text-white shadow-md"
                       onClick={() => changeAvatarMood('thinking')}
                     >
                       Creative
                     </button>
-                  </div>
-                </div>
-                
+              </div>
+            </div>
+            
                 <div className="bg-indigo-900/50 backdrop-blur-md rounded-xl p-4 border border-indigo-500/20 shadow-lg">
                   <div className="text-indigo-200 text-xs font-medium mb-2.5 flex items-center">
                     <svg xmlns="http://www.w3.org/2000/svg" className="h-3.5 w-3.5 mr-1.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -872,7 +872,7 @@ export default function Home() {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  {error}
+                {error}
                 </div>
               </div>
             )}
@@ -965,33 +965,33 @@ export default function Home() {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" />
                   </svg>
                   Volume: {Math.round((volume || 0) * 100)}%
-                </div>
-              </div>
-              
+        </div>
+      </div>
+
               <div className="w-80 h-32 flex items-end justify-center space-x-1 bg-blue-900/20 backdrop-blur-sm rounded-2xl px-4 py-3 shadow-lg">
                 {Array.from({ length: 30 }).map((_, i) => {
-                  const dynamicHeight = Math.max(
-                    10, 
-                    Math.min(100, 
+                const dynamicHeight = Math.max(
+                  10, 
+                  Math.min(100, 
                       20 + Math.sin((Date.now() / (300 + i * 40)) + i * 0.5) * 30 + (volume * 70)
-                    )
-                  );
-                  
-                  return (
-                    <div 
-                      key={i}
+                  )
+                );
+                
+                return (
+                  <div 
+                    key={i}
                       className="w-1.5 bg-gradient-to-t from-blue-500 to-indigo-300 rounded-t"
-                      style={{ 
-                        height: `${dynamicHeight}%`,
-                        opacity: 0.7 + (dynamicHeight / 200),
-                        transition: 'height 100ms ease-out'
-                      }}
-                    ></div>
-                  );
-                })}
-              </div>
+                    style={{ 
+                      height: `${dynamicHeight}%`,
+                      opacity: 0.7 + (dynamicHeight / 200),
+                      transition: 'height 100ms ease-out'
+                    }}
+                  ></div>
+                );
+              })}
             </div>
           </div>
+        </div>
         </>
       )}
 
